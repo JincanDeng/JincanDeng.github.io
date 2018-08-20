@@ -1,12 +1,12 @@
 markdown: kramdown
 permalink: /:title.html
-url: https://blog.ixxoo.me
+url: jincandeng.github.io
 lsi: true
 rouge: true
 safe: true
 
 # presonal config
-title: likebeta's Blog
+title: JincanDeng's Blog
 feed: /atom.xml
 comments: disqus
 

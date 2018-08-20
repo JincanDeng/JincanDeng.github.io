@@ -6,9 +6,9 @@ nav: true
 
 #### personal
 
-- blog: <https://www.ixxoo.me>
+- blog: <https://jincandeng.github.io>
 - app: <http://app.ixxoo.me>
-- github: <https://github.com/likebeta>
+- github: <https://github.com/JincanDeng>
 - stackoverflow: <http://stackoverflow.com/users/1931027/likebeta>
 - v2ex: <http://www.v2ex.com/member/likebeta>
 - oschina: <http://my.oschina.net/likebeta>
@@ -17,7 +17,7 @@ nav: true
 - twitter: <https://twitter.com/likebeta>
 - tqq: <http://t.qq.com/likebeta>
 - weibo: <http://weibo.com/likebeta>
-- about: <http://about.me/likebeta>
+- about: <http://about.me/JincanDeng>
 - linkedin: <http://www.linkedin.com/in/likebeta>
 - slideshare: <http://www.slideshare.net/likebeta>
 - ifttt: <https://ifttt.com/people/likebeta>

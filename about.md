@@ -27,8 +27,8 @@ Linux, C/C++, Python
 
 #### 联系
 
-+ [github/likebeta](https://github.com/JincanDeng)
-+ [email/likebeta]({{site.author.qqmail}})
++ [github/JincanDeng](https://github.com/JincanDeng)
++ [email/JincanDeng]({{site.author.qqmail}})
 
 #### avater
 
