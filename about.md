@@ -31,7 +31,7 @@ Linux, C/C++, Python
 + [email/JincanDeng](jincandeng@gmail.com)
 
 
-[//]: #
+<!---
     #### avater
 
     <div id="avater" class="avater" style="margin-top: 20px;">
@@ -103,3 +103,4 @@ Linux, C/C++, Python
     </div>
 
     <div class="clear"></div>
+-->
