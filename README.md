@@ -1,4 +1,4 @@
-## home page
+## Home page
 
 ### My blog([http://jincandeng.github.io](http://jincandeng.github.io))
 
