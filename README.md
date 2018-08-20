@@ -1,3 +1,5 @@
 #### home page
 
-It's my blog([http://blog.ixxoo.me](http://blog.ixxoo.me))
+My blog([http://jincandeng.github.io](http://jincandeng.github.io))
+
+Record for paper reading and coding.
