@@ -1,10 +1,19 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 ---
 layout: post
 title: Paper reading about video caption
 tags: [video caption]
 ---
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-
 ## Microsoft COCO Captions: Data Collection and Evaluation Server  
 
 这篇文章详细介绍了Micorsoft收集的一个image caption的数据集，并讲解了一系列用于评价image caption质量的指标，包括BLEU、ROUGE、METEOR、CIDEr，这些评价指标同样使用于video caption的任务中。
