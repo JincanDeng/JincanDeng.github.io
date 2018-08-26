@@ -4,13 +4,14 @@ title: Paper reading about video caption
 tags: [video caption]
 ---
 
-## Microsoft COCO Captions: Data Collection and Evaluation Server
+## Microsoft COCO Captions: Data Collection and Evaluation Server  
+
 这篇文章详细介绍了Micorsoft收集的一个image caption的数据集，并讲解了一系列用于评价image caption质量的指标，包括BLEU、ROUGE、METEOR、CIDEr，这些评价指标同样使用于video caption的任务中。
 
 参考这篇[博客](https://www.cnblogs.com/Determined22/p/6910277.html)
 
 + n-gram
-  n-gram是将n个单词组成的有序序列看作一个整体，在此基础上进行评价分析的语言模型。这一模型认为，第n个单词的出现只与前n-1个单词有关（Markov Assumption），从而降低了语言模型的复杂度（）。
+  n-gram是将n个单词组成的有序序列看作一个整体，在此基础上进行评价分析的语言模型。这一模型认为，第n个单词的出现只与前n-1个单词有关（Markov Assumption），从而降低了语言模型的复杂度。
 
   理论上，只要有足够的语料数据，n-gram中的n越大越好。而实际中，语料数据量往往是有限的，如果n取得过大，就会导致n-gram产生的单词序列稀疏。实际使用中，n往往取1-4。
 
@@ -47,7 +48,7 @@ tags: [video caption]
 
 + ROUGE(Recall-Oriented Understudy for Gisting Evaluation)
   ROUGE原本是用来衡量文本摘要算法性能的一系列指标。
-  + $ROUGE_N$
+  + $ROUGE_N$  
     
     由于是用来衡量文本摘要算法，自然地，模型的输出中包含了多少reference中的关键词是我们着重考虑的。$ROUGH_N$因此计算的是n-gram的召回率：
     $$ROUGE_N(c_i, S_i)=\frac{\sum_j\sum_k\min(h_k(c_i),h_k(s_{ij}))}{\sum_j\sum_kh_k(s_{ij})}$$
@@ -75,11 +76,11 @@ tags: [video caption]
   $$R_m = \frac{|m|}{\sum_kh_k(s_{ij})}$$
   $$METEOR=(1-Pen)F_mean$$
 
-+ CIDEr 
-
++ CIDEr  
+  
   这个也是还没搞懂(>_<)
   $$g_k(s_{ij})=\frac{h_k(s_{ij})}{\sum_{\omega\in\Omega}h_l(s_{ij})}\log(\frac{|I|}{\sum_{I_p\in I}\min(1,\sum_qh_k(s_{pq}))})$$
   $$CIDE_n(c_i, S_i)=\frac{1}{m}\sum_j\frac{\bold{g^n(c_i)}\cdot\bold{g^n(s_{ij})}}{\parallel \bold{g^n(c_i)} \parallel \parallel \bold{g^n(s_{ij})} \parallel}$$
   $$CIDER_r(c_i,S_i)=\sum_{n=1}^N \omega_n CIDEr_n(c_i, S_i)$$
 
-## 
+## sdf
