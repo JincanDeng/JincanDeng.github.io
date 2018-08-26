@@ -48,7 +48,7 @@ tags: [video caption]
 
   $$CP_n(C,S)=\frac{\sum_i\sum_k\min(h_k(c_i),\max_{j\in m}{h_k(s_{ij})})}{\sum_i\sum_kh_k(c_i)}$$
   
-  
+
   该式中，n-gram$\omega_k$是按照模型输出句子中的$\omega_k$来算的。(目前有点不太懂公式里面取最大最小的意义是什么？)
 
   上面的公式虽然可以计算模型输出句子中的n-gram的精确度，但是在输出句子不完整时容易造成误解。比如说，模型输出句子为："I am playing"，而参考句子为："I am playing basketball with my friends"，那么此时对于1-gram，模型输出的句子精确度将为1.0，因为模型输出的句子中的每个单词在参考句子中均有出现。为了应对这种情况，引入了brevity penalty：
@@ -70,6 +70,7 @@ tags: [video caption]
   + $ROUGE_N$  
     
     由于是用来衡量文本摘要算法，自然地，模型的输出中包含了多少reference中的关键词是我们着重考虑的。$ROUGH_N$因此计算的是n-gram的召回率：
+    
     $$ROUGE_N(c_i, S_i)=\frac{\sum_j\sum_k\min(h_k(c_i),h_k(s_{ij}))}{\sum_j\sum_kh_k(s_{ij})}$$
 
   + $ROUGE_L$
