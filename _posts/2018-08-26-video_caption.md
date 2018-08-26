@@ -10,6 +10,7 @@ tags: [video caption]
 
 参考这篇[博客](https://www.cnblogs.com/Determined22/p/6910277.html)
 
+
 * n-gram  
   ---
   n-gram是将n个单词组成的有序序列看作一个整体，在此基础上进行评价分析的语言模型。这一模型认为，第n个单词的出现只与前n-1个单词有关（Markov Assumption），从而降低了语言模型的复杂度。
@@ -29,6 +30,7 @@ tags: [video caption]
   n-gram$\omega_k$出现在参考句子$s_{ij}$中的次数：$h_k(s_{ij})$
   
   n-gram$\omega_k$出现在模型预测句子$c_i$中的次数：$h_k(c_i)$
+
 
 * BLEU(bilingual evaluation understudy)
   ---
