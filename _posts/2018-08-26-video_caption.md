@@ -45,7 +45,9 @@ tags: [video caption]
 
   基础的BLEU公式为：
   
+
   $$CP_n(C,S)=\frac{\sum_i\sum_k\min(h_k(c_i),\max_{j\in m}{h_k(s_{ij})})}{\sum_i\sum_kh_k(c_i)}$$
+  
   
   该式中，n-gram$\omega_k$是按照模型输出句子中的$\omega_k$来算的。(目前有点不太懂公式里面取最大最小的意义是什么？)
 
@@ -74,22 +76,30 @@ tags: [video caption]
 
     $ROUGE_L$是一种基于最长公共子序列(LCS，没要求一定是要连续的)的评价方法:
     
+
     $$R_l=\max_j\frac{l(c_i,s_{ij})}{|s_{ij}|}$$
     
+
     $$P_l=\max_j\frac{l(c_i,s_{ij})}{|c_i|}$$
     
+
     $$ROUGE_L(c_i,s_{ij})=\frac{(1+\beta^2) R_l P_l}{R_l+\beta^2 P_l}$$
     
+
     其中，$l(c_i,s_{ij})$表示$c_i$$s_{ij}$之间的最长子序列，$R_l$和$P_L$分别是精确率和召回率，$ROUGE_L$是他们的调和平均数。
 
   + $ROUGE_S$
     $ROUGE_S$是基于skip bi-grams的一种评价指标。所谓skip bi-grams是指2-gram，但skip bi-gram中的两个单词不一定是要相邻的。比如，一个句子有4个单词，那么它的skip bi-grams则有$C_4^2=6$种。其计算公式如下：
 
+
     $$R_s=\max_j\frac{\sum_k\min(f_k(c_i),f_k(s_{ij}))}{\sum_k f_k(s_{ij})}$$
-    
+
+
     $$P_s=\max_j\frac{\sum_k\min(f_k(c_i),f_k(s_{ij}))}{\sum_k f_k(c_i)}$$
-    
+
+
     $$ROUGE_S(c_i,s_{ij})=\frac{(1+\beta^2) R_s P_s}{R_s+\beta^2 P_s}$$
+
 
 + METEOR(Metric for Evaluation of Translation with Explicit ORderin)
   
@@ -115,7 +125,7 @@ tags: [video caption]
 
   $$CIDE_n(c_i, S_i)=\frac{1}{m}\sum_j\frac{\bold{g^n(c_i)}\cdot\bold{g^n(s_{ij})}}{\parallel \bold{g^n(c_i)} \parallel \parallel \bold{g^n(s_{ij})} \parallel}$$
 
-  
+
   $$CIDER_r(c_i,S_i)=\sum_{n=1}^N \omega_n CIDEr_n(c_i, S_i)$$
 
 ## sdf
