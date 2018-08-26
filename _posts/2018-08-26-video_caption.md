@@ -1,14 +1,4 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
+
 ---
 layout: post
 title: Paper reading about video caption
@@ -66,11 +56,13 @@ tags: [video caption]
   （但是为什么这里要对$CP_n$先取对数再取指数呢？）
 
 + ROUGE(Recall-Oriented Understudy for Gisting Evaluation)
+  
   ROUGE原本是用来衡量文本摘要算法性能的一系列指标。
   + $ROUGE_N$  
     
     由于是用来衡量文本摘要算法，自然地，模型的输出中包含了多少reference中的关键词是我们着重考虑的。$ROUGH_N$因此计算的是n-gram的召回率：
-    
+
+
     $$ROUGE_N(c_i, S_i)=\frac{\sum_j\sum_k\min(h_k(c_i),h_k(s_{ij}))}{\sum_j\sum_kh_k(s_{ij})}$$
 
   + $ROUGE_L$
