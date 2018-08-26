@@ -12,6 +12,7 @@ tags: [video caption]
 参考这篇[博客](https://www.cnblogs.com/Determined22/p/6910277.html)
 
 + n-gram
+  
   n-gram是将n个单词组成的有序序列看作一个整体，在此基础上进行评价分析的语言模型。这一模型认为，第n个单词的出现只与前n-1个单词有关（Markov Assumption），从而降低了语言模型的复杂度。
 
   理论上，只要有足够的语料数据，n-gram中的n越大越好。而实际中，语料数据量往往是有限的，如果n取得过大，就会导致n-gram产生的单词序列稀疏。实际使用中，n往往取1-4。
@@ -31,6 +32,7 @@ tags: [video caption]
   n-gram$\omega_k$出现在模型预测句子$c_i$中的次数：$h_k(c_i)$
 
 + BLEU(bilingual evaluation understudy)
+  
   BLEU是机器翻译指标中的一种，衡量的是模型输出句子与参考句子之间的n-gram的包含情况。用原文的话说，他计算的是：`corpus-level clipped n-gram precision between sentence`，BLEU在corpus-level上是相当不错的评价指标，但是在sentence-level上不是十分适合。
 
   基础的BLEU公式为：
@@ -58,6 +60,7 @@ tags: [video caption]
 + ROUGE(Recall-Oriented Understudy for Gisting Evaluation)
   
   ROUGE原本是用来衡量文本摘要算法性能的一系列指标。
+
   + $ROUGE_N$  
     
     由于是用来衡量文本摘要算法，自然地，模型的输出中包含了多少reference中的关键词是我们着重考虑的。$ROUGH_N$因此计算的是n-gram的召回率：
@@ -82,6 +85,7 @@ tags: [video caption]
     其中，$l(c_i,s_{ij})$表示$c_i$$s_{ij}$之间的最长子序列，$R_l$和$P_L$分别是精确率和召回率，$ROUGE_L$是他们的调和平均数。
 
   + $ROUGE_S$
+  
     $ROUGE_S$是基于skip bi-grams的一种评价指标。所谓skip bi-grams是指2-gram，但skip bi-gram中的两个单词不一定是要相邻的。比如，一个句子有4个单词，那么它的skip bi-grams则有$C_4^2=6$种。其计算公式如下：
 
 
