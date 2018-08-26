@@ -44,16 +44,22 @@ tags: [video caption]
   BLEU是机器翻译指标中的一种，衡量的是模型输出句子与参考句子之间的n-gram的包含情况。用原文的话说，他计算的是：`corpus-level clipped n-gram precision between sentence`，BLEU在corpus-level上是相当不错的评价指标，但是在sentence-level上不是十分适合。
 
   基础的BLEU公式为：
+  
   $$CP_n(C,S)=\frac{\sum_i\sum_k\min(h_k(c_i),\max_{j\in m}{h_k(s_{ij})})}{\sum_i\sum_kh_k(c_i)}$$
+  
   该式中，n-gram$\omega_k$是按照模型输出句子中的$\omega_k$来算的。(目前有点不太懂公式里面取最大最小的意义是什么？)
 
   上面的公式虽然可以计算模型输出句子中的n-gram的精确度，但是在输出句子不完整时容易造成误解。比如说，模型输出句子为："I am playing"，而参考句子为："I am playing basketball with my friends"，那么此时对于1-gram，模型输出的句子精确度将为1.0，因为模型输出的句子中的每个单词在参考句子中均有出现。为了应对这种情况，引入了brevity penalty：
+  
   $$b(C,S)=\begin{cases}
       1 & l_C > l_S \\
       e^{1-\frac{l_C}{l_S}} & l_C \leq l_S
   \end{cases}$$
+  
   加入brevity penalty后的BLEU计算公式为：
+  
   $$BLEU_N(C,S)=b(C,S)exp(\sum_{n=1}^N\omega_nlogCP_n(C,S))$$
+  
   其中,$N=1,2,3,4$，$\omega_n$是衡量n-gram之间相对重要性的权重。
   （但是为什么这里要对$CP_n$先取对数再取指数呢？）
 
@@ -67,31 +73,46 @@ tags: [video caption]
   + $ROUGE_L$
 
     $ROUGE_L$是一种基于最长公共子序列(LCS，没要求一定是要连续的)的评价方法:
+    
     $$R_l=\max_j\frac{l(c_i,s_{ij})}{|s_{ij}|}$$
+    
     $$P_l=\max_j\frac{l(c_i,s_{ij})}{|c_i|}$$
+    
     $$ROUGE_L(c_i,s_{ij})=\frac{(1+\beta^2) R_l P_l}{R_l+\beta^2 P_l}$$
+    
     其中，$l(c_i,s_{ij})$表示$c_i$$s_{ij}$之间的最长子序列，$R_l$和$P_L$分别是精确率和召回率，$ROUGE_L$是他们的调和平均数。
 
   + $ROUGE_S$
     $ROUGE_S$是基于skip bi-grams的一种评价指标。所谓skip bi-grams是指2-gram，但skip bi-gram中的两个单词不一定是要相邻的。比如，一个句子有4个单词，那么它的skip bi-grams则有$C_4^2=6$种。其计算公式如下：
+
     $$R_s=\max_j\frac{\sum_k\min(f_k(c_i),f_k(s_{ij}))}{\sum_k f_k(s_{ij})}$$
+    
     $$P_s=\max_j\frac{\sum_k\min(f_k(c_i),f_k(s_{ij}))}{\sum_k f_k(c_i)}$$
+    
     $$ROUGE_S(c_i,s_{ij})=\frac{(1+\beta^2) R_s P_s}{R_s+\beta^2 P_s}$$
 
 + METEOR(Metric for Evaluation of Translation with Explicit ORderin)
   
   这个暂时还没搞懂(>_<)
+
   $$Pen=\gamma(\frac{ch}{m})^\theta$$
+  
   $$F_mean=\frac{P_m R_M}{\alpha P_m + (a-\alpha) R_m}$$
+  
   $$P_m = \frac{|m|}{\sum_kh_k(c_i)}$$
+  
   $$R_m = \frac{|m|}{\sum_kh_k(s_{ij})}$$
+  
   $$METEOR=(1-Pen)F_mean$$
 
 + CIDEr  
   
   这个也是还没搞懂(>_<)
+  
   $$$g_k(s_{ij})=\frac{h_k(s_{ij})}{\sum_{\omega\in\Omega}h_l(s_{ij})}\log(\frac{|I|}{\sum_{I_p\in I}\min(1,\sum_qh_k(s_{pq}))})$$
+
   $$CIDE_n(c_i, S_i)=\frac{1}{m}\sum_j\frac{\bold{g^n(c_i)}\cdot\bold{g^n(s_{ij})}}{\parallel \bold{g^n(c_i)} \parallel \parallel \bold{g^n(s_{ij})} \parallel}$$
+  
   $$CIDER_r(c_i,S_i)=\sum_{n=1}^N \omega_n CIDEr_n(c_i, S_i)$$
 
 ## sdf
