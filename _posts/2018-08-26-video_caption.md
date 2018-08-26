@@ -3,6 +3,7 @@ layout: post
 title: Paper reading about video caption
 tags: [video caption]
 ---
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
 ## Microsoft COCO Captions: Data Collection and Evaluation Server  
 
@@ -79,7 +80,7 @@ tags: [video caption]
 + CIDEr  
   
   这个也是还没搞懂(>_<)
-  $$g_k(s_{ij})=\frac{h_k(s_{ij})}{\sum_{\omega\in\Omega}h_l(s_{ij})}\log(\frac{|I|}{\sum_{I_p\in I}\min(1,\sum_qh_k(s_{pq}))})$$
+  $$$g_k(s_{ij})=\frac{h_k(s_{ij})}{\sum_{\omega\in\Omega}h_l(s_{ij})}\log(\frac{|I|}{\sum_{I_p\in I}\min(1,\sum_qh_k(s_{pq}))})$$
   $$CIDE_n(c_i, S_i)=\frac{1}{m}\sum_j\frac{\bold{g^n(c_i)}\cdot\bold{g^n(s_{ij})}}{\parallel \bold{g^n(c_i)} \parallel \parallel \bold{g^n(s_{ij})} \parallel}$$
   $$CIDER_r(c_i,S_i)=\sum_{n=1}^N \omega_n CIDEr_n(c_i, S_i)$$
 
