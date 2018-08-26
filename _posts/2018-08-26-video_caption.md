@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Paper reading about video caption
@@ -11,7 +10,7 @@ tags: [video caption]
 
 参考这篇[博客](https://www.cnblogs.com/Determined22/p/6910277.html)
 
-+ n-gram  
++ n-gram
   n-gram是将n个单词组成的有序序列看作一个整体，在此基础上进行评价分析的语言模型。这一模型认为，第n个单词的出现只与前n-1个单词有关（Markov Assumption），从而降低了语言模型的复杂度。
 
   理论上，只要有足够的语料数据，n-gram中的n越大越好。而实际中，语料数据量往往是有限的，如果n取得过大，就会导致n-gram产生的单词序列稀疏。实际使用中，n往往取1-4。
