@@ -31,7 +31,7 @@ tags: [video caption]
   n-gram$\omega_k$出现在模型预测句子$c_i$中的次数：$h_k(c_i)$
 
 * BLEU(bilingual evaluation understudy)
-    
+  ---
   BLEU是机器翻译指标中的一种，衡量的是模型输出句子与参考句子之间的n-gram的包含情况。用原文的话说，他计算的是：`corpus-level clipped n-gram precision between sentence`，BLEU在corpus-level上是相当不错的评价指标，但是在sentence-level上不是十分适合。
 
   基础的BLEU公式为：
